@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+<!--Formulaire qui permet d'ajouter un nouveau collaborateur-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="rh">Ressource humaine</a>
+            </li>
+            <li>
+                <a href="rh-ajouter">Ajouter du personnel</a>
+            </li>
+            <li>
+                <a href="rh-supprimer">Supprimer du personnel</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Ajouter un collaborateur, l'id_rh est crée automatiquement</h2>
+        <div class="form">
+            <form action="" method="POST">
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom">
+                </div>
+                <div>
+                    <label for="salaire">Salaire</label>
+                    <input type="number" id="salaire" name="salaire">
+                </div>
+                <div>
+                    <input type="submit" value="Valider vos modification">
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>
+{% endblock %}

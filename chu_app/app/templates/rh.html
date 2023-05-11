@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+<!--Page présentant le tableau rh-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="rh">Ressource humaine</a>
+            </li>
+            <li>
+                <a href="rh-ajouter">Ajouter du personnel</a>
+            </li>
+            <li>
+                <a href="rh-supprimer">Supprimer du personnel</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Tableaux présentant nos ressources humaines.</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id_rh</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Salaire</th>
+                        <th>statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--boucle qui permet d'afficher tous les collaborateurs présents dans la table rh-->
+                    {% for ind in rh %}
+                    <tr>
+                        <td>{{ind[0]}}</td>
+                        <td>{{ind[1]}}</td>
+                        <td>{{ind[2]}}</td>
+                        <td>{{ind[3]}}</td>
+                        <!--condition qui change les valeurs de working_at_hospital, 0 => parti, 1 => en poste-->
+                        {% if ind[4] == 1 %}
+                        <td>en poste</td>
+                        {% else %}
+                        <td>parti</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

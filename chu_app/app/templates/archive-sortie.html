@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+<!--Page pour modifier une date de sortie dans les archives-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="archive">Archives</a>
+            </li>
+            <li>
+                <a href="sortie">Rajouter une date de sortie</a>
+            </li>
+            <li>
+                <a href="aleatoire-resident">Générer aléatoirement des résidents</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Ajouter une date de sortie à un patient/collaborateur.</h2>
+        <div class="form">
+            <form action="" method="POST">
+                <div>
+                    <label for="id-resident">Id_resident</label>
+                    <!-- value apparait dans input pour que l'id soit conservé lorsque la date de sortie renvoie une erreur-->
+                    <input type="text" id="id-resident" name="id-resident" value="{{request.form['id-resident']}}">
+                </div>
+                <div>
+                    <label for="date-sortie">Date de sortie</label>
+                    <!--Pas de value ici pour rappeler la valeur de date de sortie, puisqu'un message apparait pour le montrer et qu'elle doit être modifiée-->
+                    <input type="date" id="date-sortie" name="date-sortie">
+                </div>
+                <div>
+                    <input type="submit" value="Valider la date de sortie">
+                </div>
+            </form>
+        </div>
+        
+        <!--fait apparaitre un message d'erreur si la date de sortie se trouve avant la date d'entrée, en précisant la date rentrée, le format AAAA/MM/JJ est 
+        dû à une fonction pour pouvoir rentrer la date dans la bdd.-->
+        
+        <div class="flash-message">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div        
+    </div>
+</div>
+{% endblock %}

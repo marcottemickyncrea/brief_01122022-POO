@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!--Formulaire qui permet de supprimer unc collaborateur grace à son identifiant_rh-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="rh">Ressource humaine</a>
+            </li>
+            <li>
+                <a href="rh-ajouter">Ajouter du personnel</a>
+            </li>
+            <li>
+                <a href="rh-supprimer">Supprimer du personnel</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Supprimer l'un des nos collaborateurs, nécessite son id_rh</h2>
+        <div class="form">
+            <form action="" method="POST">
+                <div>
+                    <label for="id-rh">Id_rh</label>
+                    <input type="text" id="id-rh" name="id-rh">
+                </div>
+                <div>
+                    <input type="submit" value="Valider votre suppression">
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>
+{% endblock %}

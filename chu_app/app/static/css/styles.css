@@ -1,0 +1,160 @@
+/*réinitialisation des valeurs à 0*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*header*/
+.banniere {
+    background-image: url('https://www.smcaen.fr/sites/default/files/saison-2019-2020/article/chu1-4651667.jpeg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    height: 180px;
+    padding: 5px;
+}
+
+.logo {
+    width: fit-content;
+    padding: 15px;
+    background-color: white;
+    color: rgb(17, 17, 116);
+    font-size: 34px;
+    font-weight: 900;
+}
+
+nav {
+    padding: 15px;
+    background-color: aliceblue;
+    border-bottom: 1px solid black;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ /*lorsqu'une ancre est survolé, change de couleur et surligne*/
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/*body*/
+.acceuil {
+    height: 70vh;
+    align-items: center;
+}
+
+.page {
+    height: 60vh;
+    margin: 50px;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.presentation {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px;
+    border: 3px dotted black;
+}
+
+.infos li{
+    margin: 15px;
+    list-style: square;
+    list-style-position: inside;
+}
+
+.direction {
+    margin-top: 50px;
+    text-align: right;
+}
+
+.sous-nav {
+    width: fit-content;
+    text-align: left;
+    position: fixed;
+    top: 300px;    
+}
+
+.sous-nav li {
+    padding: 15px;
+    background-color: aliceblue;
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.table th,td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+/*lorsqu'une ligne d'un tableau, autre que th, la ligne devient bleu*/
+.table tr:hover {
+    color: blue
+}
+
+.table th {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.form {
+    border: 1px solid black;
+    width: 300px;
+    margin: 15px;
+    padding: 15px
+}
+
+.form div {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form div label {
+    padding-bottom: 5px;
+}
+
+input {
+    text-align: center;
+}
+
+input[type='submit'] {
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.flash-message{
+    color: red;
+}

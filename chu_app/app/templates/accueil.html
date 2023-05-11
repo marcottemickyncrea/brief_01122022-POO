@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!--Page d'acceuil-->
+{% block content %}
+<div class="page">
+    <div class="presentation">
+        <h2>Bienvenue sur le site du CHU de Caen pour toute notre gestion administratif.</h2>
+        <p>Retrouvez les différents services permettant le bon fonctionnement de l'ensemble du CHU de Caen.</p>
+        <ul class="infos">
+            <li>L'onglet 'Nos patients' permet de voir nos différents patients, d'en ajouter et d'en supprimer.</li>
+            <li>L'ongle 'Ressource Humaine' permet de voir nos différents collaborateurs, d'en ajouter et d'en
+                supprimer.</li>
+            <li>Enfin, l'onglet 'Archives' permet de voir la date d'entrée et de sortie des patients/collaborateurs.<br>
+                Vous pouvez aussi modifier les dates de sorties, ce qui met à jour vos tableaux 'patients' & 'rh'. <br>
+                De plus, notre direction nous a fait l'étrange demande de générer des patients/collaborateurs
+                aléatoirement,<br>
+                ce qui met aussi à jour nos tableaux 'patients' & 'rh'.
+            </li>
+        </ul>
+        <div class="direction">
+            <p>Bien Cordialement,</p>
+            <p>Celui qui passe après le stagiaire !</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

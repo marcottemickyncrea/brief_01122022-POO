@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    {% if title %}
+    <title>{{ title }} - CHU Caen</title>
+    {% else %}
+    <title>CHU Caen</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }} ">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <header>
+        <a href="/">
+        <div class="banniere">
+            <div class="logo">
+                <img src="https://www.chu-caen.fr/images/logos/logo-chucaenbf.png" alt="">
+                <p>Administratif</p>
+            </div>
+        </div>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="patients">Nos patients</a>
+                </li>
+                <li>
+                    <a href="rh">Ressource humaine</a>
+                </li>
+                <li>
+                    <a href="archive">Archive</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+
+</html>

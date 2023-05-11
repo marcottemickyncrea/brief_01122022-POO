@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<!--page pour générer des résidents aléatoires-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="archive">Archives</a>
+            </li>
+            <li>
+                <a href="sortie">Rajouter une date de sortie</a>
+            </li>
+            <li>
+                <a href="aleatoire-resident">Générer aléatoirement des résidents</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Génère des résidents aléatoirement !</h2>
+        <div class="form">
+            <form action="" method="POST">
+                <div>
+                    <label for="aleatoire">Votre nombre</label>
+                    <!--renvoie par défaut 1, qui est aussi la valeur mininum, 10 en maximum avec un pas de 1-->
+                    <input type="number" id="aleatoire" name="aleatoire" value=1 min=1 max=10 step=1>
+                </div>
+                <div>
+                    <input type="submit" value="Générer des résidents">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

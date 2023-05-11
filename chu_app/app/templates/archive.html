@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+<!--Tableau des résidents avec date d'entrée et de sortie-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="archive">Archives</a>
+            </li>
+            <li>
+                <a href="sortie">Rajouter une date de sortie</a>
+            </li>
+            <li>
+                <a href="aleatoire-resident">Générer aléatoirement des résidents</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Archives des entrées et sorties des patients et collaborateurs</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id resident</th>
+                        <th>Date entrée</th>
+                        <th>Date sortie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--boucle qui permet d'afficher les résidents-->
+                    {% for archive in archives %}
+                    <tr>
+                        <td>{{archive[0]}}</td>
+                        <td>{{archive[1]}}</td>
+                        <!--condition qui change la valeur de la date de sortie en 'Non renseigné' lorsqu'elle n'est pas encore enregistré-->
+                        {% if archive[2] == None %}
+                        <td>Non renseigné</td>
+                        {% else %}
+                        <td>{{archive[2]}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

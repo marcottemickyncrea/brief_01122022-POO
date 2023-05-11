@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+<!--page présentant le tableau des patients-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="patients">Tableau patients</a>
+            </li>
+            <li>
+                <a href="patient-ajouter">Ajouter un patient</a>
+            </li>
+            <li>
+                <a href="patient-supprimer">Supprimer un patient</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Tableaux présentant les patients actuellement présent dans nos services</h2>
+        <p>Il y a {{count[0]}} patients dans la bdd.</p>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id patient</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Groupe sanguin</th>
+                        <th>statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Boucle qui permet d'afficher les patients-->
+                    {% for patient in patients%}
+                    <tr>
+                        <td>{{patient[0]}}</td>
+                        <td>{{patient[1]}}</td>
+                        <td>{{patient[2]}}</td>
+                        <td>{{patient[3]}}</td>
+                        <!--condition qui change la valeur de is_in_hospital, 0 => sorti, 1=> en soin-->
+                        {% if patient[4] == 1 %}
+                        <td>en soin</td>
+                        {% else %}
+                        <td>sorti</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

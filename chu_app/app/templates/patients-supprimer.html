@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!--Formlulaire qui permet de supprimer un patient grâce à son identifiant_patient-->
+{% block content %}
+<div class="page">
+    <div class="sous-nav">
+        <ul>
+            <li>
+                <a href="patients">Tableau patients</a>
+            </li>
+            <li>
+                <a href="patient-ajouter">Ajouter un patient</a>
+            </li>
+            <li>
+                <a href="patient-supprimer">Supprimer un patient</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Supprimer l'un des nos patients, nécessite son id_patient</h2>
+        <div class="form">
+            <form action="" method="POST">
+                <div>
+                    <label for="id-patient">Id_patient</label>
+                    <input type="text" id="id-patient" name="id-patient">
+                </div>
+                <div>
+                    <input type="submit" value="Valider votre suppression">
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>
+{% endblock %}

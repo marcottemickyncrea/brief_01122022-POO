@@ -1,0 +1,68 @@
+===========================================================
+| POO x Bases de données : le stagiaire a fait des siennes |
+===========================================================
+
+Vous venez d'intégrer le CHU de Caen dans le cadre d'un premier CDD
+en tant que développeur.se AI.
+Votre chef de service est très heureux de vous compter parmis ses nouveaux
+collaborateurs ! Mais malheureusement, l'ancien stagiaire est passé par là...
+
+Il devait créer une application orientée objets en python afin
+d'enregister en base de données les entrées sorties des résidents de l'hopital
+ et faciliter le quotidien des Ressources humaines.
+...Mais son code ne fonctionne pas et sa base de données est inutilisable.
+
+
+Compostion de l'application & des classes (voir l'annexe consigne des RH)
+
+
+
+1) Vous devrez dans un premier temps corriger son code pour que vous puissiez 
+lancer/run main_app.py depuis le dossier chu_app.
+Le stagiaire a probablement oublié des imports de modules et a surement fait des erreurs
+ de syntaxe  
+
+
+Nb: Vous pouvez pour vous aider créer des methodes de test dans chaque module 
+et appeler ces méthodes depuis main_app.py. Chaque methode pouvant par exemple
+retourner un string du type "Je fonctionne depuis ce module!"
+
+
+2) Ensuite vous allez recréer une nouvelle base de données que vous appellerez 
+"CHU_Caen", dans laquelle vous insérerez les tables suivantes 
+
+
+Table1 : "patients"
+-------------------
+
+identifiant_patient : varchar(200) Primary Key
+nom : varchar(200) 
+prenom : varchar(200)
+groupe_sanguin : varchar(3)
+is_in_hospital : tinyint(1)
+
+
+Table2 : "rh"
+------------
+
+identifiant_rh  : varchar(200) Primary Key
+nom : varchar(200) 
+prenom : varchar(200)
+salaire : varchar(3)
+working_at_hospital : tinyint(1)
+
+
+Table3 : "archives"
+------------------
+
+identifiant_resident  : varchar(200) Primary Key
+date_entree  : date
+date_sortie : date
+
+
+3) Enfin vous lirez notes_chef_de_service.py puis notes_rh.txt
+
+
+4) Pour finir vous allez générer aléatoirement des patients et rh en créant un nouveau module
+que vous appellerez fake_resident.py.
+Vous pourrez, par exemple, vous aider de la bibliothèque "random"
